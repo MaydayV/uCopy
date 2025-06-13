@@ -13,10 +13,13 @@ import Combine
 
 struct GeneralSettingsView: View {
     @AppStorage("uCopy.sound")
-    private var selectedSound: SoundNames = .blow
+    private var selectedSound = "blow"
     @AppStorage("uCopy.maxSavedLength")
     private var maxSavedLength = "20"
     @State private var showingPopover = false
+    
+    private let availableSounds = ["none", "basso", "blow", "bottle", "frog", "funk", "glass", "hero", "morse", "ping", "pop", "purr", "sosumi", "submarine", "tink"]
+    
     var body: some View {
         Form {
             Section {
@@ -30,8 +33,8 @@ struct GeneralSettingsView: View {
             .padding(.bottom)
             Section {
                 Picker("Sound", selection: $selectedSound) {
-                    ForEach(SoundNames.allCases) { sound in
-                        Text(sound.rawValue.capitalized)
+                    ForEach(availableSounds, id: \.self) { sound in
+                        Text(sound.capitalized)
                     }
                 }
             }
@@ -63,23 +66,20 @@ struct GeneralSettingsView: View {
         .padding(20)
         .frame(width: 350, height: 100)
         .onChange(of: selectedSound) { newSound in
-            NSSound(named: newSound.rawValue.capitalized)?.play()
+            if newSound != "none" {
+                let soundName = newSound.capitalized
+                if let soundObj = NSSound(named: soundName) {
+                    soundObj.play()
+                } else {
+                    if let soundObjLower = NSSound(named: newSound.lowercased()) {
+                        soundObjLower.play()
+                    } else if let soundObjUpper = NSSound(named: newSound.uppercased()) {
+                        soundObjUpper.play()
+                    } else if let soundObjOriginal = NSSound(named: newSound) {
+                        soundObjOriginal.play()
+                    }
+                }
+            }
         }
     }
-}
-
-enum SoundNames: String, CaseIterable, Identifiable {
-    /**
-         Basso.aiff     Bottle.aiff    Funk.aiff      Hero.aiff      Ping.aiff      Purr.aiff      Submarine.aiff
-         Blow.aiff      Frog.aiff      Glass.aiff     Morse.aiff     Pop.aiff       Sosumi.aiff    Tink.aiff
-     */
-    case none, basso, blow, bottle, frog, funk, glass, hero, morse, ping, pop, purr, sosumi, submarine, tink
-    var id: Self { self }
-}
-
-extension KeyboardShortcuts.Name {
-    static let historyShortcuts = Self("historyShortcuts",
-                                       default: .init(.c, modifiers: [.command, .option]))
-    static let snippetShortcuts = Self("snippetShortcuts",
-                                       default: .init(.x, modifiers: [.command, .option]))
 }
