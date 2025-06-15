@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B03DC4C2DFEF6D600D1510D /* ReplacementSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B03DC4B2DFEF6D600D1510D /* ReplacementSettingsView.swift */; };
+		3B03DC4E2DFEF6E600D1510D /* ReplacementEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B03DC4D2DFEF6E600D1510D /* ReplacementEditView.swift */; };
 		4D1ECFED291263D1009CBA22 /* uCopyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1ECFEC291263D1009CBA22 /* uCopyApp.swift */; };
 		4D1ECFF1291263D2009CBA22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D1ECFF0291263D2009CBA22 /* Assets.xcassets */; };
 		4D1ECFF4291263D2009CBA22 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D1ECFF3291263D2009CBA22 /* Preview Assets.xcassets */; };
@@ -32,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B03DC4B2DFEF6D600D1510D /* ReplacementSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplacementSettingsView.swift; sourceTree = "<group>"; };
+		3B03DC4D2DFEF6E600D1510D /* ReplacementEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplacementEditView.swift; sourceTree = "<group>"; };
 		4D1ECFE9291263D1009CBA22 /* uCopy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uCopy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D1ECFEC291263D1009CBA22 /* uCopyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uCopyApp.swift; sourceTree = "<group>"; };
 		4D1ECFF0291263D2009CBA22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 				4DCB3438291FD97400E3B3CA /* SettingView.swift */,
 				4D805D8729321A25009F4F52 /* SnippetSettingsView.swift */,
 				4D6124FB29324ABE0044E63C /* SnippetEditView.swift */,
+				3B03DC4B2DFEF6D600D1510D /* ReplacementSettingsView.swift */,
+				3B03DC4D2DFEF6E600D1510D /* ReplacementEditView.swift */,
 				4DCB343E2924B4C600E3B3CA /* AboutSettingsView.swift */,
 				4DCB343C2924B4BA00E3B3CA /* GeneralSettingsView.swift */,
 				4DCB3436291E345C00E3B3CA /* HistoryView.swift */,
@@ -212,6 +218,8 @@
 				4DCB3447292E0F1000E3B3CA /* AccessibilityService.swift in Sources */,
 				4DCB343F2924B4C600E3B3CA /* AboutSettingsView.swift in Sources */,
 				4DCB3445292DC67500E3B3CA /* PasteService.swift in Sources */,
+				3B03DC4C2DFEF6D600D1510D /* ReplacementSettingsView.swift in Sources */,
+				3B03DC4E2DFEF6E600D1510D /* ReplacementEditView.swift in Sources */,
 				4DCB3412291D23F300E3B3CA /* DataController.swift in Sources */,
 				4DCB3437291E345C00E3B3CA /* HistoryView.swift in Sources */,
 				4DCB3439291FD97400E3B3CA /* SettingView.swift in Sources */,
@@ -386,7 +394,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tongkaisun.uCopy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.faichou.uCopy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -421,7 +429,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tongkaisun.uCopy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.faichou.uCopy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

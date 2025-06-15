@@ -27,4 +27,9 @@ class CoreDataHelper {
         ]
         return r
     }
+    static func replacementRuleFetchRequest() -> NSFetchRequest<ReplacementRule> {
+        let request = NSFetchRequest<ReplacementRule>(entityName: "ReplacementRule")
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \ReplacementRule.order, ascending: true)]
+        return request
+    }
 }

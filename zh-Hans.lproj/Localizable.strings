@@ -33,3 +33,11 @@
 "Image" = "图片";
 "File" = "文件";
 "More" = "更多";
+"Replacement" = "自动替换";
+"Select a rule" = "选择一条替换规则编辑";
+"Add replacement rule" = "添加需要的替换规则";
+"Text to replace" = "替换前文本";
+"Replacement text" = "替换后文本";
+"Cancel" = "取消";
+"Add" = "添加";
+"Save" = "保存";

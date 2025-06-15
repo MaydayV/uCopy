@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     private enum Tabs: Hashable {
-        case general, about, snippet
+        case general, about, snippet, replacement
     }
     var body: some View {
         TabView {
@@ -23,6 +23,11 @@ struct SettingsView: View {
                     Label("Snippet", systemImage: "bubbles.and.sparkles")
                 }
                 .tag(Tabs.snippet)
+            ReplacementSettingsView()
+                .tabItem {
+                    Label("Replacement", systemImage: "arrow.triangle.2.circlepath")
+                }
+                .tag(Tabs.replacement)
             AboutSettingsView()
                 .tabItem {
                     Label("About", systemImage: "timelapse")

@@ -17,6 +17,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         // 禁用标签页功能
         NSWindow.allowsAutomaticWindowTabbing = false
+        
+        // 减少系统级警告和日志输出
+        UserDefaults.standard.set(false, forKey: "NSApplicationCrashOnExceptions")
+        
+        // 设置应用程序为后台应用，减少不必要的系统检查
+        NSApp.setActivationPolicy(.accessory)
     }
     
     // 当应用程序即将终止时保存数据
@@ -86,6 +92,7 @@ struct uCopyApp: App {
                     MenuManager.popupSnippetMenu()
                 }
                 MenuManager.moc = dataController.container.viewContext
+                monitor.managedObjectContext = dataController.container.viewContext
                 self.pasteboardMonitorCancellable = pub.sink { n in
                     guard let data = n.userInfo?["data"] as? PasteboardData else {
                         return

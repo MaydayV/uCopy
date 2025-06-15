@@ -35,3 +35,11 @@
 "Image" = "Image";
 "File" = "File";
 "More" = "More";
+"Replacement" = "Replacement";
+"Select a rule" = "Select a rule to edit";
+"Add replacement rule" = "Add replacement rules";
+"Text to replace" = "Text to replace";
+"Replacement text" = "Replacement text";
+"Cancel" = "Cancel";
+"Add" = "Add";
+"Save" = "Save";
