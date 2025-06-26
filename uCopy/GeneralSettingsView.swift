@@ -23,25 +23,22 @@ struct GeneralSettingsView: View {
     var body: some View {
         Form {
             Section {
-                LaunchAtLogin.Toggle("Launch at login")
+                LaunchAtLogin.Toggle(NSLocalizedString("Launch at login", comment: ""))
             }
             .padding(.bottom)
+            
             Section {
-                KeyboardShortcuts.Recorder("History Shortcuts:", name: .historyShortcuts)
-                KeyboardShortcuts.Recorder("Snippet Shortcuts:", name: .snippetShortcuts)
-            }
-            .padding(.bottom)
-            Section {
-                Picker("Sound", selection: $selectedSound) {
+                Picker(NSLocalizedString("Sound", comment: ""), selection: $selectedSound) {
                     ForEach(availableSounds, id: \.self) { sound in
                         Text(sound.capitalized)
                     }
                 }
             }
             .padding(.bottom)
+            
             Section {
                 HStack {
-                    TextField("Max saved:", text: $maxSavedLength)
+                    TextField(NSLocalizedString("Max saved:", comment: ""), text: $maxSavedLength)
                         .onReceive(Just(maxSavedLength)) { newValue in
                             let filtered = newValue.filter { "0123456789".contains($0) }
                             if filtered != newValue {
@@ -55,11 +52,17 @@ struct GeneralSettingsView: View {
                     }
                     .buttonStyle(.plain)
                     .popover(isPresented: $showingPopover) {
-                        Text("Excess items will be deleted automatically")
+                        Text(NSLocalizedString("Excess items will be deleted automatically", comment: ""))
                             .font(.headline)
                             .padding()
                     }
                 }
+            }
+            .padding(.bottom)
+            
+            Section {
+                KeyboardShortcuts.Recorder(NSLocalizedString("History Shortcuts:", comment: ""), name: .historyShortcuts)
+                KeyboardShortcuts.Recorder(NSLocalizedString("Snippet Shortcuts:", comment: ""), name: .snippetShortcuts)
             }
             .padding(.bottom)
         }

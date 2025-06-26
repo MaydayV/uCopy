@@ -11,8 +11,9 @@ struct SettingsView: View {
     private enum Tabs: Hashable {
         case general, about, snippet, replacement
     }
+    @State private var selectedTab: Tabs = .general
     var body: some View {
-        TabView {
+        TabView(selection: $selectedTab) {
             GeneralSettingsView()
                 .tabItem {
                     Label("General", systemImage: "gear")

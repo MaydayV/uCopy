@@ -16,12 +16,12 @@
 "Name" = "名称";
 "Name, Required" = "名称";
 "Launch at login" = "开机启动";
-"Sound" = "提示音";
+"Sound" = "复制提示音:";
 "Unknown" = "未知";
 "Clear History" = "清除历史";
-"History Shortcuts:" = "粘贴板快捷键:";
-"Snippet Shortcuts:" = "短语片段快捷键:";
-"Max saved:" = "最多存储:";
+"History Shortcuts:" = "历史记录:";
+"Snippet Shortcuts:" = "使用片段:";
+"Max saved:" = "存储条数:";
 "Excess items will be deleted automatically" = "超出的部分会被自动删除";
 "Yet Another Pasteboard Tool" = "Yet Another Pasteboard Tool";
 "Clipboard history & Snippet support" = "历史粘贴板 & 快捷短语";

@@ -70,8 +70,9 @@ struct uCopyApp: App {
                 Button("Perferences...") {
                     NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
                     for window in NSApplication.shared.windows {
-                        if window.title == "General" || window.title == "Snippet" || window.title == "About" {
+                        if window.title == "General" || window.title == "Snippet" || window.title == "About" || window.title == "Replacement" {
                             window.level = .floating
+                            window.orderFrontRegardless()
                         }
                     }
                 }.keyboardShortcut(",")
